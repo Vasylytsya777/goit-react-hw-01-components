@@ -3,13 +3,13 @@ import Profile from "../components/profile/Profile";
 import Statistics from "./statistics/Statistics";
 import FriendList from "./friendList/FriendList";
 import TransactionHistory from "./transactions/Transactions";
-import user from "../data/user.json";
-import statisticalData from "../data/statistical-data.json";
-import friends from "../data/friends.json";
-import transactions from "../data/transactions.json";
+// import user from "../data/user.json";
+// import statisticalData from "../data/statistical-data.json";
+// import friends from "../data/friends.json";
+// import transactions from "../data/transactions.json";
+import { user, statisticalData, friends, transactions } from "../data/index";
 
 const App = () => {
-  // console.log(statisticalData);
   return (
     <>
       <Profile {...user} />

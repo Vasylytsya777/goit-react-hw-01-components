@@ -1,37 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./Statistics.module.css";
 
-const Statistics = ({ title, stats }) => {
-  //   console.log({ title });
-  //   const { id, label, percentage } = stats;
+function getRandomColor() {
+  let color = function () {
+    return Math.floor(Math.random() * 256);
+  };
+  return "rgb(" + color() + "," + color() + "," + color() + ")";
+}
+
+const Statistics = ({ title = " ", stats }) => {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
 
-      <ul class="stat-list">
+      <ul className={styles.statList}>
         {stats.map((item) => (
-          <li class="item" key={item.id}>
-            <span class="label">{item.label}</span>
-            <span class="percentage">{item.percentage}%</span>
+          <li
+            className={styles.item}
+            key={item.id}
+            style={{ backgroundColor: getRandomColor() }}
+          >
+            <span className={styles.label}>{item.label}</span>
+            <span className={styles.percentage}>{item.percentage}%</span>
           </li>
         ))}
       </ul>
     </section>
   );
 };
-
-// function randomColor() {
-//   color =
-//     "rgb(" +
-//     Math.round(Math.random() * 255) +
-//     "," +
-//     Math.round(Math.random() * 255) +
-//     "," +
-//     Math.round(Math.random() * 255) +
-//     ")";
-//   const result = "#" + color;
-//   return result;
-// }
 
 Statistics.defaultProps = {
   title: "",

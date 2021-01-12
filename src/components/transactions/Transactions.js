@@ -1,13 +1,14 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import "./transactiosStyle.css";
+import PropTypes from "prop-types";
 
 const TransactionHistory = ({ items }) => {
   //   const { type, id, amount, currency } = items;
 
   return (
-    <table class="transaction-history">
+    <table className="transaction-history">
       <thead>
-        <tr>
+        <tr className="transactionTr">
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
@@ -15,16 +16,21 @@ const TransactionHistory = ({ items }) => {
       </thead>
       <tbody>
         {items.map((item) => (
-          <tr key={item.id}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
+          <tr className="transactionTrItem" key={item.id}>
+            <>
+              <td>{item.type}</td>
+              <td>{item.amount}</td>
+              <td>{item.currency}</td>
+            </>
           </tr>
         ))}
-        ;
       </tbody>
     </table>
   );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.object,
 };
 
 export default TransactionHistory;
