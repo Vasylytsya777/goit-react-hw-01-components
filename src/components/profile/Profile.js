@@ -13,7 +13,7 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
         <p className={styles.location}>{location}</p>
       </div>
 
-      <ul className={styles.stats}>
+      <ul className={styles.statsList}>
         <li>
           <span className={styles.label}>Followers</span>
           <span className={styles.quantity}>{followers}</span>
@@ -29,6 +29,10 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
       </ul>
     </div>
   );
+};
+
+Profile.defaultProps = {
+  avatar: "https://www.flaticon.com/svg/static/icons/svg/3135/3135715.svg ",
 };
 
 Profile.propTypes = {
